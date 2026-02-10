@@ -1,0 +1,2664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Clawdbot Complete Beginner's Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: #e8e6e3;
+            line-height: 1.6;
+            padding: 1%;
+            margin: 1%;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            background: rgba(15, 12, 41, 0.8);
+            border-radius: 12px;
+            padding: 1%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 1.4rem;
+            color: #ff9a56;
+            text-align: center;
+            margin: 1% 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 1.15rem;
+            color: #6dd5ed;
+            margin: 3% 0 2% 0;
+            padding-left: 1%;
+            border-left: 4px solid #ff9a56;
+            font-weight: 600;
+        }
+        
+        h3 {
+            font-size: 1rem;
+            color: #a8dadc;
+            margin: 2% 0 1% 0;
+            font-weight: 600;
+        }
+        
+        h4 {
+            font-size: 0.95rem;
+            color: #ffd93d;
+            margin: 1.5% 0 1% 0;
+            font-weight: 600;
+        }
+        
+        p {
+            margin: 1.5% 0;
+            color: #e8e6e3;
+            font-size: 0.95rem;
+        }
+        
+        .step {
+            background: rgba(109, 213, 237, 0.1);
+            border-left: 4px solid #6dd5ed;
+            padding: 2%;
+            margin: 2% 0;
+            border-radius: 6px;
+        }
+        
+        .tip {
+            background: rgba(255, 154, 86, 0.15);
+            border-left: 4px solid #ff9a56;
+            padding: 2%;
+            margin: 2% 0;
+            border-radius: 6px;
+        }
+        
+        .warning {
+            background: rgba(255, 107, 107, 0.15);
+            border-left: 4px solid #ff6b6b;
+            padding: 2%;
+            margin: 2% 0;
+            border-radius: 6px;
+        }
+        
+        .success {
+            background: rgba(81, 255, 155, 0.15);
+            border-left: 4px solid #51ff9b;
+            padding: 2%;
+            margin: 2% 0;
+            border-radius: 6px;
+        }
+        
+        .code-block {
+            background: #1a1a2e;
+            border: 1px solid #6dd5ed;
+            border-radius: 6px;
+            padding: 2%;
+            margin: 2% 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: #a8dadc;
+        }
+        
+        .example {
+            background: rgba(168, 218, 220, 0.1);
+            padding: 2%;
+            margin: 2% 0;
+            border-radius: 6px;
+            border: 1px dashed #a8dadc;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2%;
+            margin: 2% 0;
+        }
+        
+        .bad-example {
+            background: rgba(255, 107, 107, 0.1);
+            border: 2px solid #ff6b6b;
+            padding: 2%;
+            border-radius: 6px;
+        }
+        
+        .good-example {
+            background: rgba(81, 255, 155, 0.1);
+            border: 2px solid #51ff9b;
+            padding: 2%;
+            border-radius: 6px;
+        }
+        
+        .faq-item {
+            background: rgba(109, 213, 237, 0.08);
+            padding: 2%;
+            margin: 2% 0;
+            border-radius: 6px;
+            border-left: 3px solid #6dd5ed;
+        }
+        
+        .faq-question {
+            color: #ffd93d;
+            font-weight: 600;
+            font-size: 0.98rem;
+            margin-bottom: 1%;
+        }
+        
+        .faq-answer {
+            color: #e8e6e3;
+            font-size: 0.93rem;
+        }
+        
+        ul, ol {
+            margin: 1.5% 0 1.5% 4%;
+            color: #e8e6e3;
+        }
+        
+        li {
+            margin: 1% 0;
+            font-size: 0.95rem;
+        }
+        
+        strong {
+            color: #ff9a56;
+            font-weight: 600;
+        }
+        
+        .highlight {
+            background: rgba(255, 154, 86, 0.3);
+            padding: 0.2% 1%;
+            border-radius: 3px;
+            color: #fff;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #6dd5ed;
+            color: #0f0c29;
+            padding: 0.3% 1.5%;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin: 0.5%;
+        }
+        
+        .nav {
+            position: sticky;
+            top: 0;
+            background: rgba(15, 12, 41, 0.98);
+            padding: 2%;
+            margin: -1% -1% 2% -1%;
+            border-radius: 12px 12px 0 0;
+            z-index: 100;
+            border-bottom: 2px solid #6dd5ed;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2%;
+            justify-content: center;
+        }
+        
+        .nav-links a {
+            color: #6dd5ed;
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 1% 2%;
+            background: rgba(109, 213, 237, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(109, 213, 237, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .template-box {
+            background: rgba(255, 211, 61, 0.1);
+            border: 2px dashed #ffd93d;
+            padding: 2%;
+            margin: 2% 0;
+            border-radius: 6px;
+        }
+        
+        .mistake-box {
+            background: rgba(255, 107, 107, 0.12);
+            padding: 2%;
+            margin: 2% 0;
+            border-radius: 6px;
+            border-left: 4px solid #ff6b6b;
+        }
+        
+        .screenshot-placeholder {
+            background: rgba(109, 213, 237, 0.15);
+            border: 2px solid #6dd5ed;
+            padding: 5%;
+            margin: 2% 0;
+            border-radius: 8px;
+            text-align: center;
+            color: #6dd5ed;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 1.2rem; }
+            h2 { font-size: 1.05rem; }
+            h3 { font-size: 0.95rem; }
+            h4 { font-size: 0.9rem; }
+            p, li { font-size: 0.9rem; }
+            .code-block { font-size: 0.75rem; }
+            .comparison { grid-template-columns: 1fr; }
+            .badge { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="nav-links">
+                <a href="#intro">Intro</a>
+                <a href="#first-5min">First 5 Min</a>
+                <a href="#walkthrough">Walkthrough</a>
+                <a href="#capabilities">Capabilities</a>
+                <a href="#mistakes">Mistakes</a>
+                <a href="#prompts">Before/After</a>
+                <a href="#templates">Templates</a>
+                <a href="#example-prompts">50+ Examples</a>
+                <a href="#artifacts-deep-dive">Artifacts</a>
+                <a href="#mobile-best-practices">Mobile</a>
+                <a href="#debug">Debug</a>
+                <a href="#faq">FAQ</a>
+            </div>
+        </div>
+        
+        <h1>🤖 2026 Clawdbot Complete Beginner's Guide</h1>
+        <p style="text-align: center; color: #a8dadc; margin-bottom: 1%;">The Ultimate Guide for Absolute Beginners</p>
+        <p style="text-align: center; color: #ffd93d; font-size: 0.85rem; margin-bottom: 3%;">No Coding Experience Required!</p>
+        
+        <section id="intro">
+            <h2>👋 Welcome! Start Here If You're Completely New</h2>
+            
+            <div class="success">
+                <strong>🎉 Good News:</strong> You don't need ANY coding experience to create apps with Claude! If you can describe what you want, Claude can build it for you.
+            </div>
+            
+            <h3>What is Clawdbot (Claude)?</h3>
+            <p>Think of Claude as your personal app developer that you talk to in plain English. You describe the app you want, and Claude writes all the code and creates it for you instantly.</p>
+            
+            <div class="example">
+                <strong>Real Example:</strong><br>
+                <strong>You say:</strong> "I need a shopping list app where I can add items and check them off"<br>
+                <strong>Claude creates:</strong> A complete, working app you can use immediately! No coding needed!
+            </div>
+            
+            <h3>What Can You Create?</h3>
+            <ul>
+                <li><strong>Tools & Utilities:</strong> Calculators, converters, timers, counters</li>
+                <li><strong>Trackers:</strong> Habit trackers, expense trackers, workout logs</li>
+                <li><strong>Organizers:</strong> Todo lists, shopping lists, meal planners</li>
+                <li><strong>Games:</strong> Quizzes, memory games, simple puzzles</li>
+                <li><strong>Personal Apps:</strong> Journals, mood trackers, goal planners</li>
+                <li><strong>Business Tools:</strong> Invoice generators, meeting schedulers, time trackers</li>
+            </ul>
+            
+            <div class="tip">
+                <strong>💡 Key Point:</strong> You control the conversation. You tell Claude what to build, what to change, and when it's perfect. Claude is your tool!
+            </div>
+        </section>
+        
+        <section id="first-5min">
+            <h2>⏱️ Your First 5 Minutes with Claude</h2>
+            
+            <div class="step">
+                <h3>Minute 1: Get Access</h3>
+                <div class="screenshot-placeholder">
+                    📱 Screenshot: Opening claude.ai on your phone or computer
+                </div>
+                <ol>
+                    <li>Open your web browser (Chrome, Safari, Firefox, etc.)</li>
+                    <li>Go to <strong>claude.ai</strong></li>
+                    <li>Sign up with your email or Google account</li>
+                    <li>You're in! The free version is perfect for learning</li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h3>Minute 2: Send Your First Message</h3>
+                <div class="screenshot-placeholder">
+                    💬 Screenshot: The chat interface with example message
+                </div>
+                <p>In the message box at the bottom, type exactly this:</p>
+                <div class="code-block">
+Create a simple button counter app. When I click the button, 
+it should increase the count. Make it colorful and fun!
+                </div>
+                <p>Press Enter and watch the magic happen!</p>
+            </div>
+            
+            <div class="step">
+                <h3>Minute 3: See Your App Appear</h3>
+                <div class="screenshot-placeholder">
+                    ✨ Screenshot: Artifact appearing with the counter app
+                </div>
+                <p>Claude will create an <span class="highlight">"artifact"</span> - a box on the right side (or below on mobile) showing your working app!</p>
+                <ul>
+                    <li>Click the button in the app - it works!</li>
+                    <li>This is YOUR app that Claude just built</li>
+                    <li>It took about 5 seconds</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h3>Minute 4: Make a Change</h3>
+                <div class="screenshot-placeholder">
+                    🔧 Screenshot: Typing modification request
+                </div>
+                <p>Now type this:</p>
+                <div class="code-block">
+Make the button bigger and change the color to blue
+                </div>
+                <p>Watch Claude update your app instantly!</p>
+            </div>
+            
+            <div class="step">
+                <h3>Minute 5: Save Your App</h3>
+                <div class="screenshot-placeholder">
+                    💾 Screenshot: Download button in artifact
+                </div>
+                <ul>
+                    <li>Look for the download icon at the top of your app</li>
+                    <li>Click it to save the app as an HTML file</li>
+                    <li>You can open this file anytime in your browser!</li>
+                </ul>
+            </div>
+            
+            <div class="success">
+                <strong>🎊 Congratulations!</strong> You just created, modified, and saved your first app! You're now a Claude user!
+            </div>
+        </section>
+        
+        <section id="walkthrough">
+            <h2>🎯 Step-by-Step First Project: Build a Todo List App</h2>
+            <p style="color: #ffd93d; font-style: italic;">Follow this complete project from start to finish</p>
+            
+            <div class="step">
+                <h3>Project Goal</h3>
+                <p>We'll build a functional todo list where you can:</p>
+                <ul>
+                    <li>Add new tasks</li>
+                    <li>Check off completed tasks</li>
+                    <li>Delete tasks you don't need</li>
+                    <li>See your tasks persist even if you close the browser</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h3>Step 1: Create the Basic Version</h3>
+                <div class="screenshot-placeholder">
+                    📝 Screenshot: Initial prompt being typed
+                </div>
+                <p><strong>Type this into Claude:</strong></p>
+                <div class="template-box">
+Create a todo list app with these features:
+- An input box where I can type a new task
+- An "Add" button to add the task to my list
+- Each task should have a checkbox to mark it complete
+- Each task should have a delete button
+- Use a clean, modern design with good colors
+- Make it work on mobile phones
+                </div>
+                
+                <div class="tip">
+                    <strong>Why this works:</strong> We're being specific about features but letting Claude handle all the design and code details!
+                </div>
+            </div>
+            
+            <div class="step">
+                <h3>Step 2: Test the App</h3>
+                <div class="screenshot-placeholder">
+                    🧪 Screenshot: Testing the todo app
+                </div>
+                <p><strong>Try these tests:</strong></p>
+                <ol>
+                    <li>Type "Buy groceries" and click Add - does it appear?</li>
+                    <li>Click the checkbox - does it mark as complete?</li>
+                    <li>Click delete - does it remove the task?</li>
+                    <li>Add 3-4 tasks to see how it looks with multiple items</li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h3>Step 3: Make It Better</h3>
+                <div class="screenshot-placeholder">
+                    ✨ Screenshot: Requesting improvements
+                </div>
+                <p><strong>Now improve it with this message:</strong></p>
+                <div class="template-box">
+Make these improvements:
+1. When I check a task as complete, cross it out
+2. Add a counter showing how many tasks I have
+3. Add a "Clear All Completed" button
+4. Make the colors more vibrant - use purple and teal
+                </div>
+                <p>See how Claude updates your app with all these features!</p>
+            </div>
+            
+            <div class="step">
+                <h3>Step 4: Add Persistence</h3>
+                <div class="screenshot-placeholder">
+                    💾 Screenshot: Adding local storage
+                </div>
+                <p><strong>Make it remember your tasks:</strong></p>
+                <div class="template-box">
+Save my tasks so they don't disappear when I close the browser. 
+Use local storage to remember them.
+                </div>
+                <p>Now your tasks will be there even if you close and reopen the app!</p>
+            </div>
+            
+            <div class="step">
+                <h3>Step 5: Final Polish</h3>
+                <div class="screenshot-placeholder">
+                    ✨ Screenshot: Final polished app
+                </div>
+                <p><strong>Add the finishing touches:</strong></p>
+                <div class="template-box">
+Add these final touches:
+- A nice title at the top saying "My Tasks"
+- Make the input box larger and easier to tap on mobile
+- Add a placeholder text in the input that says "What needs to be done?"
+- Add smooth animations when tasks are added or deleted
+                </div>
+            </div>
+            
+            <div class="success">
+                <strong>🎉 Project Complete!</strong> You've built a professional-quality todo list app! Save it and use it daily!
+                <br><br>
+                <strong>What you learned:</strong>
+                <ul style="margin-top: 1%;">
+                    <li>How to describe features clearly</li>
+                    <li>How to test and iterate</li>
+                    <li>How to make improvements step-by-step</li>
+                    <li>How to add advanced features like data persistence</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="capabilities">
+            <h2>🎮 Understanding Claude's Capabilities & Limitations</h2>
+            <p style="color: #a8dadc;">Set realistic expectations for what Claude can and cannot do</p>
+            
+            <h3>✅ What Claude CAN Do (Really Well!)</h3>
+            
+            <div class="success">
+                <h4>1. Create Complete Web Apps</h4>
+                <ul>
+                    <li>Fully functional apps that work in your browser</li>
+                    <li>Beautiful designs with colors, layouts, and animations</li>
+                    <li>Interactive features like buttons, forms, and calculations</li>
+                    <li>Mobile-responsive designs that work on any device</li>
+                </ul>
+            </div>
+            
+            <div class="success">
+                <h4>2. Understand Plain English</h4>
+                <ul>
+                    <li>You don't need to know coding terminology</li>
+                    <li>Describe things in your own words</li>
+                    <li>Claude figures out what you mean</li>
+                    <li>Example: "Make it pretty" = Claude adds nice styling</li>
+                </ul>
+            </div>
+            
+            <div class="success">
+                <h4>3. Make Changes Instantly</h4>
+                <ul>
+                    <li>Modify colors, sizes, layouts on demand</li>
+                    <li>Add new features to existing apps</li>
+                    <li>Fix bugs and errors</li>
+                    <li>Optimize for different screen sizes</li>
+                </ul>
+            </div>
+            
+            <div class="success">
+                <h4>4. Build Different Types of Apps</h4>
+                <ul>
+                    <li><strong>Calculators:</strong> BMI, mortgage, tip, currency conversion</li>
+                    <li><strong>Trackers:</strong> Expenses, habits, workouts, time</li>
+                    <li><strong>Games:</strong> Quizzes, memory games, word games</li>
+                    <li><strong>Tools:</strong> Password generators, timers, color pickers</li>
+                    <li><strong>Organizers:</strong> Todo lists, calendars, planners</li>
+                    <li><strong>Visualizations:</strong> Charts, graphs, dashboards</li>
+                </ul>
+            </div>
+            
+            <div class="success">
+                <h4>5. Explain How Things Work</h4>
+                <ul>
+                    <li>Ask "How does this feature work?" and Claude explains</li>
+                    <li>Learn as you build</li>
+                    <li>Get simplified explanations without jargon</li>
+                </ul>
+            </div>
+            
+            <h3>❌ What Claude CANNOT Do</h3>
+            
+            <div class="warning">
+                <h4>1. Remember Previous Conversations</h4>
+                <p>Each chat is independent. If you start a new chat, Claude won't remember the app from your last conversation. <strong>Solution:</strong> Keep working in the same chat, or save your apps!</p>
+            </div>
+            
+            <div class="warning">
+                <h4>2. Access the Internet or External Data</h4>
+                <p>Claude can't pull live data from websites (like real-time stock prices or weather). <strong>However:</strong> Claude can create apps that YOU can connect to data sources, or use built-in APIs.</p>
+            </div>
+            
+            <div class="warning">
+                <h4>3. Create Native Mobile Apps</h4>
+                <p>Claude creates web apps (HTML) that work in browsers, not iPhone/Android apps you download from app stores. <strong>But:</strong> These web apps work great on mobile browsers!</p>
+            </div>
+            
+            <div class="warning">
+                <h4>4. Create Apps That Need Servers</h4>
+                <p>Claude creates "client-side" apps that run in your browser. It can't create apps that need databases or server backends. <strong>However:</strong> It can use browser storage for saving data locally!</p>
+            </div>
+            
+            <div class="warning">
+                <h4>5. Make Apps "Go Viral" or Handle Millions of Users</h4>
+                <p>Claude creates personal apps, not enterprise-scale applications. Perfect for personal use, small teams, prototypes, and learning!</p>
+            </div>
+            
+            <h3>🎯 Best Use Cases for Beginners</h3>
+            
+            <div class="example">
+                <strong>Perfect For:</strong>
+                <ul>
+                    <li>Personal productivity tools</li>
+                    <li>Learning tools and calculators</li>
+                    <li>Simple games and entertainment</li>
+                    <li>Prototypes and proof-of-concepts</li>
+                    <li>Portfolio projects to show your ideas</li>
+                    <li>Automating simple tasks</li>
+                </ul>
+            </div>
+            
+            <div class="tip">
+                <strong>💡 Pro Tip:</strong> Start with what Claude does best! Build personal tools, learn by doing, and gradually explore more complex features.
+            </div>
+        </section>
+        
+        <section id="mistakes">
+            <h2>⚠️ 25 Common Mistakes Beginners Make (And How to Avoid Them)</h2>
+            
+            <h3>Category 1: Prompting Mistakes</h3>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #1: Being Too Vague</h4>
+                <div class="comparison">
+                    <div class="bad-example">
+                        <strong>🔴 Bad:</strong><br>
+                        "Make me an app"
+                    </div>
+                    <div class="good-example">
+                        <strong>🟢 Good:</strong><br>
+                        "Create a timer app that counts down from 5 minutes with start, pause, and reset buttons"
+                    </div>
+                </div>
+                <p><strong>Fix:</strong> Always describe WHAT the app does and WHO will use it.</p>
+            </div>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #2: Asking for Everything at Once</h4>
+                <div class="comparison">
+                    <div class="bad-example">
+                        <strong>🔴 Bad:</strong><br>
+                        "Create a fitness app with workout tracking, meal planning, calorie counter, social features, AI coaching, and marketplace"
+                    </div>
+                    <div class="good-example">
+                        <strong>🟢 Good:</strong><br>
+                        "Create a simple workout tracker where I can log exercises and sets. We'll add features later."
+                    </div>
+                </div>
+                <p><strong>Fix:</strong> Start simple, then add features one at a time!</p>
+            </div>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #3: Not Specifying the Platform</h4>
+                <div class="comparison">
+                    <div class="bad-example">
+                        <strong>🔴 Bad:</strong><br>
+                        "Create a calculator"
+                    </div>
+                    <div class="good-example">
+                        <strong>🟢 Good:</strong><br>
+                        "Create a mobile-friendly calculator app with large buttons easy to tap on a phone"
+                    </div>
+                </div>
+                <p><strong>Fix:</strong> Say "mobile-friendly" or "for phone" if you want it on mobile!</p>
+            </div>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #4: Ignoring Design Preferences</h4>
+                <div class="comparison">
+                    <div class="bad-example">
+                        <strong>🔴 Bad:</strong><br>
+                        "Create a notes app"
+                    </div>
+                    <div class="good-example">
+                        <strong>🟢 Good:</strong><br>
+                        "Create a notes app with a dark theme, large text for easy reading, and calming blue colors"
+                    </div>
+                </div>
+                <p><strong>Fix:</strong> Mention colors, themes, and style preferences upfront!</p>
+            </div>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #5: Using Technical Jargon You Don't Understand</h4>
+                <div class="comparison">
+                    <div class="bad-example">
+                        <strong>🔴 Bad:</strong><br>
+                        "Use Redux for state management with WebSockets"
+                    </div>
+                    <div class="good-example">
+                        <strong>🟢 Good:</strong><br>
+                        "Make sure the app remembers my data when I close and reopen it"
+                    </div>
+                </div>
+                <p><strong>Fix:</strong> Describe WHAT you want to happen, not HOW to code it!</p>
+            </div>
+            
+            <h3>Category 2: Testing Mistakes</h3>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #6: Not Testing Before Asking for Changes</h4>
+                <p><strong>Problem:</strong> Asking Claude to add features without trying the current version first.</p>
+                <p><strong>Fix:</strong> Always click around and test everything before requesting changes!</p>
+            </div>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #7: Not Testing on Mobile</h4>
+                <p><strong>Problem:</strong> Only testing on computer, then app looks broken on phone.</p>
+                <p><strong>Fix:</strong> If you want a mobile app, test it on your phone! Open the saved HTML file in your phone's browser.</p>
+            </div>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #8: Accepting Bugs Without Reporting</h4>
+                <p><strong>Problem:</strong> Noticing something doesn't work but not telling Claude.</p>
+                <p><strong>Fix:</strong> If something is broken, say: "The delete button doesn't work when I click it - can you fix this?"</p>
+            </div>
+            
+            <h3>Category 3: Workflow Mistakes</h3>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #9: Starting New Chats for the Same Project</h4>
+                <p><strong>Problem:</strong> Starting a new conversation and expecting Claude to remember your app.</p>
+                <p><strong>Fix:</strong> Keep working in the SAME chat for one project! Claude only remembers the current conversation.</p>
+            </div>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #10: Not Saving Your Work</h4>
+                <p><strong>Problem:</strong> Closing the browser without downloading the app.</p>
+                <p><strong>Fix:</strong> Download the HTML file after every major change! Click the download icon in the artifact.</p>
+            </div>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #11: Making Too Many Changes at Once</h4>
+                <p><strong>Problem:</strong> "Change the color, add three features, redesign the layout, and fix the button"</p>
+                <p><strong>Fix:</strong> Make one change at a time so you can see what works!</p>
+            </div>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #12: Not Naming Your Files</h4>
+                <p><strong>Problem:</strong> Downloading files as "artifact.html" and losing track.</p>
+                <p><strong>Fix:</strong> Rename files immediately: "todo-list-v1.html", "calculator-purple.html"</p>
+            </div>
+            
+            <h3>Category 4: Communication Mistakes</h3>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #13: Not Explaining What's Wrong</h4>
+                <div class="comparison">
+                    <div class="bad-example">
+                        <strong>🔴 Bad:</strong><br>
+                        "This doesn't work"
+                    </div>
+                    <div class="good-example">
+                        <strong>🟢 Good:</strong><br>
+                        "When I click the save button, nothing happens. I expected it to save my note."
+                    </div>
+                </div>
+                <p><strong>Fix:</strong> Describe what you did, what happened, and what you expected!</p>
+            </div>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #14: Using Unclear References</h4>
+                <div class="comparison">
+                    <div class="bad-example">
+                        <strong>🔴 Bad:</strong><br>
+                        "Make that thing bigger"
+                    </div>
+                    <div class="good-example">
+                        <strong>🟢 Good:</strong><br>
+                        "Make the 'Add Task' button bigger"
+                    </div>
+                </div>
+                <p><strong>Fix:</strong> Be specific about which element you're talking about!</p>
+            </div>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #15: Giving Up Too Quickly</h4>
+                <p><strong>Problem:</strong> App doesn't work perfectly on first try, so you quit.</p>
+                <p><strong>Fix:</strong> Apps are built iteratively! Keep refining until it's right. Claude is patient!</p>
+            </div>
+            
+            <h3>Category 5: Expectation Mistakes</h3>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #16: Expecting App Store Quality Immediately</h4>
+                <p><strong>Problem:</strong> Thinking the first version will be perfect.</p>
+                <p><strong>Fix:</strong> All apps need refinement! Professional apps take multiple iterations.</p>
+            </div>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #17: Comparing to Million-Dollar Apps</h4>
+                <p><strong>Problem:</strong> "Why doesn't this look like Instagram?"</p>
+                <p><strong>Fix:</strong> Instagram has 100+ engineers! Focus on creating useful tools for YOUR needs.</p>
+            </div>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #18: Thinking You Need to Learn Coding First</h4>
+                <p><strong>Problem:</strong> "I should learn JavaScript before using Claude."</p>
+                <p><strong>Fix:</strong> Start building NOW! You'll learn by doing. Claude handles the code!</p>
+            </div>
+            
+            <h3>Category 6: Feature Mistakes</h3>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #19: Adding Features Nobody Needs</h4>
+                <p><strong>Problem:</strong> Adding animations, sounds, and effects to a simple calculator.</p>
+                <p><strong>Fix:</strong> Focus on functionality first! Make it work, then make it fancy.</p>
+            </div>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #20: Not Thinking About Mobile Users</h4>
+                <p><strong>Problem:</strong> Tiny buttons that are impossible to tap on phones.</p>
+                <p><strong>Fix:</strong> Always say "make buttons large enough to tap easily on mobile"</p>
+            </div>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #21: Forgetting Data Persistence</h4>
+                <p><strong>Problem:</strong> Creating an expense tracker that loses all data on refresh.</p>
+                <p><strong>Fix:</strong> Ask Claude to "save data using local storage" for any app that tracks information!</p>
+            </div>
+            
+            <h3>Category 7: Design Mistakes</h3>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #22: Choosing Poor Color Contrast</h4>
+                <p><strong>Problem:</strong> Light gray text on white background - impossible to read!</p>
+                <p><strong>Fix:</strong> Ask for "high contrast colors" and "easy-to-read text"</p>
+            </div>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #23: Making Text Too Small</h4>
+                <p><strong>Problem:</strong> Beautiful design but you need a magnifying glass to read it.</p>
+                <p><strong>Fix:</strong> Specify "large, readable text" especially for mobile apps!</p>
+            </div>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #24: Cluttered Layouts</h4>
+                <p><strong>Problem:</strong> Cramming too much onto one screen.</p>
+                <p><strong>Fix:</strong> Ask for "clean, spacious layout with breathing room"</p>
+            </div>
+            
+            <h3>Category 8: Final Mistake</h3>
+            
+            <div class="mistake-box">
+                <h4>❌ Mistake #25: Not Having Fun!</h4>
+                <p><strong>Problem:</strong> Taking it too seriously and getting stressed.</p>
+                <p><strong>Fix:</strong> Experiment! Try wild ideas! There's no penalty for mistakes. You can always start over!</p>
+            </div>
+            
+            <div class="success">
+                <strong>🎯 Remember:</strong> Everyone makes these mistakes at first! The key is learning from them. Save this section and review it before starting each new project!
+            </div>
+        </section>
+        
+        <section id="prompts">
+            <h2>📚 Before/After Prompt Examples</h2>
+            <p style="color: #a8dadc;">Learn what makes prompts effective by seeing real comparisons</p>
+            
+            <h3>Example Set 1: Calculator App</h3>
+            
+            <div class="comparison">
+                <div class="bad-example">
+                    <strong>❌ BEFORE (Vague):</strong><br>
+                    "Make a calculator"
+                </div>
+                <div class="good-example">
+                    <strong>✅ AFTER (Specific):</strong><br>
+                    "Create a mobile-friendly calculator with:<br>
+                    - Basic operations (+, -, ×, ÷)<br>
+                    - Large buttons for easy tapping<br>
+                    - Display showing current calculation<br>
+                    - Clear and backspace buttons<br>
+                    - Blue theme with white text"
+                </div>
+            </div>
+            
+            <div class="tip">
+                <strong>What Changed:</strong> Added specific features, mentioned mobile-friendly, specified design preferences!
+            </div>
+            
+            <h3>Example Set 2: Fitness Tracker</h3>
+            
+            <div class="comparison">
+                <div class="bad-example">
+                    <strong>❌ BEFORE (Too Ambitious):</strong><br>
+                    "Build a complete fitness app with workout plans, nutrition tracking, social features, AI coaching, progress photos, and integration with all fitness devices"
+                </div>
+                <div class="good-example">
+                    <strong>✅ AFTER (Focused):</strong><br>
+                    "Create a simple workout logger where I can:<br>
+                    - Add exercises with sets and reps<br>
+                    - View my workout history<br>
+                    - Mark workouts as complete<br>
+                    - See this week's completed workouts<br>
+                    Let's start with this, then add features later."
+                </div>
+            </div>
+            
+            <div class="tip">
+                <strong>What Changed:</strong> Reduced scope dramatically, focused on core features, mentioned iterative approach!
+            </div>
+            
+            <h3>Example Set 3: Shopping List</h3>
+            
+            <div class="comparison">
+                <div class="bad-example">
+                    <strong>❌ BEFORE (Technical Jargon):</strong><br>
+                    "Create a React component using hooks for state management with localStorage persistence and CSS Grid layout"
+                </div>
+                <div class="good-example">
+                    <strong>✅ AFTER (Plain English):</strong><br>
+                    "Create a shopping list app where I can add items, check them off when I buy them, and delete items. Save my list so it's there when I come back tomorrow."
+                </div>
+            </div>
+            
+            <div class="tip">
+                <strong>What Changed:</strong> Removed technical terms, focused on user actions and outcomes!
+            </div>
+            
+            <h3>Example Set 4: Budget Tracker</h3>
+            
+            <div class="comparison">
+                <div class="bad-example">
+                    <strong>❌ BEFORE (No Context):</strong><br>
+                    "Track expenses"
+                </div>
+                <div class="good-example">
+                    <strong>✅ AFTER (Full Context):</strong><br>
+                    "Create a monthly budget tracker where I can:<br>
+                    - Enter my monthly income<br>
+                    - Add expenses with category (food, transport, etc.)<br>
+                    - See remaining budget for the month<br>
+                    - View expenses by category in a pie chart<br>
+                    - Use green/yellow/red colors to show if I'm on budget<br>
+                    Save all data locally."
+                </div>
+            </div>
+            
+            <div class="tip">
+                <strong>What Changed:</strong> Provided complete picture of features, mentioned visualization, specified color scheme!
+            </div>
+            
+            <h3>Example Set 5: Making Changes</h3>
+            
+            <div class="comparison">
+                <div class="bad-example">
+                    <strong>❌ BEFORE (Unclear):</strong><br>
+                    "This is wrong, fix it"
+                </div>
+                <div class="good-example">
+                    <strong>✅ AFTER (Specific):</strong><br>
+                    "When I click the 'Add' button, the input box doesn't clear after adding an item. Can you make it clear automatically after adding?"
+                </div>
+            </div>
+            
+            <div class="tip">
+                <strong>What Changed:</strong> Described specific behavior, explained expected outcome!
+            </div>
+            
+            <h3>Example Set 6: Timer App</h3>
+            
+            <div class="comparison">
+                <div class="bad-example">
+                    <strong>❌ BEFORE (Single Sentence):</strong><br>
+                    "Make a timer"
+                </div>
+                <div class="good-example">
+                    <strong>✅ AFTER (Detailed):</strong><br>
+                    "Create a pomodoro timer app for productivity:<br>
+                    - 25-minute work timer<br>
+                    - 5-minute break timer<br>
+                    - Start, pause, reset buttons<br>
+                    - Show remaining time in large numbers<br>
+                    - Play a gentle sound when time is up<br>
+                    - Count completed pomodoros<br>
+                    - Use calming green and white colors"
+                </div>
+            </div>
+            
+            <div class="tip">
+                <strong>What Changed:</strong> Specified timer type, listed all features, mentioned audio and design!
+            </div>
+        </section>
+        
+        <section id="templates">
+            <h2>📋 Prompt Templates Library</h2>
+            <p style="color: #a8dadc;">Fill-in-the-blank templates for common app types</p>
+            
+            <h3>Template 1: Tracker App</h3>
+            <div class="template-box">
+Create a [THING TO TRACK] tracker where I can:<br>
+- Add new [ITEMS] with [DETAILS like date, amount, category]<br>
+- View a list of all my [ITEMS]<br>
+- [ACTION like mark complete, delete, edit]<br>
+- See [SUMMARY like total, average, chart]<br>
+- Use [COLOR SCHEME] colors<br>
+- Save data so it persists between sessions<br>
+Make it mobile-friendly with large touch targets.
+            </div>
+            <div class="example">
+                <strong>Example:</strong> "Create a water intake tracker where I can: Add glasses of water with time stamps, View total glasses today, Mark my daily goal, See a progress bar, Use blue and white colors, Save data so it persists between sessions. Make it mobile-friendly with large touch targets."
+            </div>
+            
+            <h3>Template 2: Calculator/Tool App</h3>
+            <div class="template-box">
+Create a [TYPE] calculator that:<br>
+- Takes inputs for [INPUT 1], [INPUT 2], [INPUT 3]<br>
+- Calculates [WHAT IT CALCULATES]<br>
+- Shows the result as [FORMAT like number, percentage, category]<br>
+- Has [EXTRA FEATURES like reset, history, save]<br>
+- Uses [COLOR SCHEME] with good contrast<br>
+- Works great on mobile phones
+            </div>
+            <div class="example">
+                <strong>Example:</strong> "Create a tip calculator that: Takes inputs for bill amount, tip percentage, number of people, Calculates tip amount and total per person, Shows the result in large, easy-to-read numbers, Has preset tip buttons (15%, 18%, 20%), Uses green and white with good contrast, Works great on mobile phones"
+            </div>
+            
+            <h3>Template 3: Game App</h3>
+            <div class="template-box">
+Create a [GAME TYPE] game where:<br>
+- The player [MAIN ACTION]<br>
+- [WINNING CONDITION]<br>
+- Keep score showing [SCORING DETAILS]<br>
+- Include [DIFFICULTY LEVELS or variations]<br>
+- Add [VISUAL/AUDIO FEEDBACK]<br>
+- Use [THEME/COLORS]<br>
+- Mobile-friendly with [SPECIFIC MOBILE NEEDS]
+            </div>
+            <div class="example">
+                <strong>Example:</strong> "Create a memory matching game where: The player flips cards to find matching pairs, All pairs must be found to win, Keep score showing moves taken and time elapsed, Include Easy (8 cards) and Hard (16 cards) modes, Add card flip animations, Use colorful playful theme, Mobile-friendly with large tappable cards"
+            </div>
+            
+            <h3>Template 4: Organizer App</h3>
+            <div class="template-box">
+Create a [WHAT YOU'RE ORGANIZING] organizer that lets me:<br>
+- Add [ITEMS] with [PROPERTIES]<br>
+- Categorize by [CATEGORIES]<br>
+- Sort by [SORTING OPTIONS]<br>
+- Filter to show [FILTER OPTIONS]<br>
+- [ADDITIONAL FEATURES like export, share, remind]<br>
+- Display as [LIST/GRID/CALENDAR]<br>
+- Use [COLORS] and save all data locally
+            </div>
+            <div class="example">
+                <strong>Example:</strong> "Create a meal planner organizer that lets me: Add meals with name and ingredients, Categorize by breakfast/lunch/dinner, Sort by date or meal type, Filter to show this week's meals, Add a shopping list generator from ingredients, Display as a weekly calendar grid, Use warm orange and yellow colors and save all data locally"
+            </div>
+            
+            <h3>Template 5: Dashboard/Viewer App</h3>
+            <div class="template-box">
+Create a [PURPOSE] dashboard showing:<br>
+- [METRIC 1] displayed as [CHART TYPE or format]<br>
+- [METRIC 2] displayed as [CHART TYPE or format]<br>
+- [METRIC 3] displayed as [CHART TYPE or format]<br>
+- Allow me to [INTERACTIONS like filter, update, refresh]<br>
+- Use [COLOR CODING SYSTEM]<br>
+- Make it [VISUAL STYLE]<br>
+- Optimize for [DEVICE TYPE]
+            </div>
+            <div class="example">
+                <strong>Example:</strong> "Create a personal finance dashboard showing: Monthly spending displayed as a pie chart by category, Income vs expenses displayed as bar chart, Savings rate displayed as a large percentage, Allow me to select different months, Use green for positive, red for negative, yellow for neutral, Make it clean and modern, Optimize for both desktop and mobile"
+            </div>
+            
+            <h3>Template 6: Modification Request</h3>
+            <div class="template-box">
+Make these changes to the app:<br>
+1. [SPECIFIC CHANGE 1] - [WHY or desired effect]<br>
+2. [SPECIFIC CHANGE 2] - [WHY or desired effect]<br>
+3. [SPECIFIC CHANGE 3] - [WHY or desired effect]<br>
+<br>
+Keep everything else the same.
+            </div>
+            <div class="example">
+                <strong>Example:</strong> "Make these changes to the app: 1. Make the 'Add' button twice as large - easier to tap on phone, 2. Change background from blue to dark purple - easier on eyes, 3. Add a counter at top showing total items - want to see at a glance. Keep everything else the same."
+            </div>
+            
+            <div class="success">
+                <strong>💡 Pro Tip:</strong> Bookmark this section! Use these templates as starting points and customize them for your specific needs.
+            </div>
+        </section>
+        
+        <section id="example-prompts">
+            <h2>💎 50+ Categorized Example Prompts</h2>
+            <p style="color: #a8dadc;">Copy-paste ready prompts organized by app type - just customize and use!</p>
+            
+            <h3>📊 Productivity & Organization (10 Prompts)</h3>
+            
+            <div class="example">
+                <strong>1. Advanced Todo List</strong>
+                <div class="code-block">
+Create a todo list app with priority levels (High, Medium, Low) 
+shown in red, yellow, and green. Include due dates, categories 
+(Work, Personal, Shopping), and a filter to show only today's tasks. 
+Add a progress bar showing percentage complete. Save all data locally 
+and make it mobile-friendly with swipe-to-delete functionality.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>2. Pomodoro Focus Timer</strong>
+                <div class="code-block">
+Create a Pomodoro timer with 25-minute work sessions and 5-minute 
+breaks. Show a large countdown timer, play a gentle chime when time 
+is up, track completed pomodoros today, and show productivity stats. 
+Include pause/resume buttons and a session history. Use calm green 
+and white colors optimized for distraction-free focus.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>3. Daily Habit Tracker</strong>
+                <div class="code-block">
+Build a habit tracker for 7 daily habits with checkbox grids showing 
+the last 30 days. Calculate and display current streaks with fire 
+emojis. Show completion percentage for each habit. Include motivational 
+messages when streaks are broken or extended. Use a colorful, 
+encouraging design with celebration animations for completing all habits.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>4. Quick Note Taker</strong>
+                <div class="code-block">
+Create a note-taking app with auto-save as I type. Show all notes 
+as cards with timestamps and first line as preview. Add search 
+functionality to filter notes. Include tags/labels in different colors. 
+Allow exporting all notes as text file. Use a clean, minimalist design 
+like Apple Notes with good typography.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>5. Meeting Agenda Builder</strong>
+                <div class="code-block">
+Create a meeting agenda tool where I can add agenda items with 
+time allocations. Show a running timer during the meeting that 
+alerts when each item's time is up. Include a notes section for 
+each item and action items with assignees. Export as formatted 
+text or PDF. Professional blue and gray design.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>6. Weekly Meal Planner</strong>
+                <div class="code-block">
+Build a 7-day meal planner with breakfast, lunch, and dinner slots. 
+Include a recipe library where I can save favorite meals. Auto-generate 
+a shopping list from selected meals showing all ingredients needed. 
+Add dietary tags (vegetarian, gluten-free, etc.). Use appetizing 
+colors like warm oranges and greens with food-themed icons.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>7. Password Generator & Vault</strong>
+                <div class="code-block">
+Create a secure password generator with options for length (8-32 chars), 
+uppercase, lowercase, numbers, and symbols. Show password strength meter. 
+Include a vault to save website names and generated passwords (encrypted 
+in local storage). Add copy-to-clipboard buttons. Use security-themed 
+colors like dark blue and gold with lock icons.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>8. Reading List Organizer</strong>
+                <div class="code-block">
+Build a reading list where I can add books with title, author, status 
+(Want to Read, Currently Reading, Finished), rating (1-5 stars), and 
+notes. Show separate tabs for each status. Include reading statistics: 
+books finished this year, average rating, most-read genre. Add book 
+cover placeholder colors. Library-themed browns and creams.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>9. Time Tracker for Projects</strong>
+                <div class="code-block">
+Create a time tracking app with multiple projects/categories. Include 
+start/stop timer with current session display. Show daily and weekly 
+summaries by project in bar charts. Calculate billable hours at custom 
+rates. Export time sheets as CSV. Professional design with project 
+color coding and large visible timer.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>10. Daily Journal with Prompts</strong>
+                <div class="code-block">
+Build a journaling app that shows a random writing prompt each day 
+("What made you smile today?", "Biggest challenge?", etc.). Include 
+calendar view to see past entries. Add mood tracker with emoji selection. 
+Search entries by keyword or mood. Private, calming design with soft 
+purples and blues, serif fonts for reading comfort.
+                </div>
+            </div>
+            
+            <h3>💰 Finance & Money Management (8 Prompts)</h3>
+            
+            <div class="example">
+                <strong>11. Monthly Budget Tracker</strong>
+                <div class="code-block">
+Create a budget app where I set monthly income and budget limits for 
+categories (Food, Transport, Entertainment, Bills, etc.). Track expenses 
+with amount, category, and date. Show remaining budget per category with 
+color coding (green=good, yellow=warning, red=over budget). Display 
+pie chart of spending by category. Include month-to-month comparison.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>12. Tip Calculator Pro</strong>
+                <div class="code-block">
+Build a tip calculator with bill amount input, tip percentage slider 
+(10-30%), and number of people. Show tip amount, total with tip, and 
+amount per person in large numbers. Include preset tip buttons (15%, 
+18%, 20%, 25%). Add tax calculation option. Round up/down toggle. 
+Restaurant-themed design with receipt-style layout.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>13. Expense Splitter</strong>
+                <div class="code-block">
+Create an app to split expenses among friends. Add people's names, 
+enter shared expenses with who paid and who owes. Calculate who owes 
+whom and how much. Show settlement suggestions to minimize transactions. 
+Include expense history and group totals. Friendly, social design with 
+person icons and clear debt/credit indicators.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>14. Savings Goal Tracker</strong>
+                <div class="code-block">
+Build a savings goal visualizer where I set a target amount and deadline. 
+Track deposits toward the goal. Show progress bar, percentage saved, 
+amount remaining, and estimated completion date. Include multiple goals 
+(vacation, emergency fund, new laptop). Celebratory animations when 
+goals are reached. Motivating green and gold colors.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>15. Simple Invoice Generator</strong>
+                <div class="code-block">
+Create an invoice creator for freelancers. Input client name, invoice 
+number, date, line items (description, quantity, rate), and payment terms. 
+Auto-calculate subtotal, tax, and total. Generate printable invoice with 
+professional formatting. Save invoice templates. Include invoice history. 
+Professional navy and white design with clear typography.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>16. Subscription Tracker</strong>
+                <div class="code-block">
+Build a subscription manager showing all monthly subscriptions (Netflix, 
+Spotify, etc.) with cost and renewal date. Calculate total monthly and 
+yearly costs. Alert when renewal is approaching. Categorize by type 
+(entertainment, software, etc.). Show cost trends over time. Use warning 
+colors for expensive subscriptions and money-saving recommendations.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>17. Currency Converter</strong>
+                <div class="code-block">
+Create a multi-currency converter with popular currencies (USD, EUR, 
+GBP, JPY, etc.). Show conversion in both directions simultaneously. 
+Include recent conversion history. Add favorite currency pairs. 
+Display exchange rate and last update time. Clean design with country 
+flags and large readable numbers. Note: Use hardcoded rates or let 
+users input rates.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>18. Debt Payoff Calculator</strong>
+                <div class="code-block">
+Build a debt payoff planner where I enter multiple debts with balance, 
+interest rate, and minimum payment. Calculate payoff timeline using 
+snowball or avalanche method. Show total interest paid and debt-free 
+date. Visualize payoff progress with timeline chart. Include extra 
+payment scenarios. Motivating design showing path to financial freedom.
+                </div>
+            </div>
+            
+            <h3>🏃 Health & Fitness (8 Prompts)</h3>
+            
+            <div class="example">
+                <strong>19. Water Intake Tracker</strong>
+                <div class="code-block">
+Create a water tracking app with customizable daily goal (glasses or ml). 
+Add water button increments counter. Show progress as filling water bottle 
+graphic. Display percentage of goal and glasses/ml remaining. Include 
+hourly reminders toggle. Track weekly hydration stats with bar chart. 
+Refreshing blue and aqua theme with water droplet animations.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>20. Workout Logger</strong>
+                <div class="code-block">
+Build a workout tracker where I log exercises with sets, reps, and weight. 
+Organize by workout day/split (Push, Pull, Legs, etc.). Show workout 
+history and personal records. Calculate volume (sets × reps × weight). 
+Include rest timer between sets. Track progress over time with line graphs. 
+Motivating design with achievement badges for milestones.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>21. BMI & Body Metrics Calculator</strong>
+                <div class="code-block">
+Create a health metrics calculator for BMI, BMR, TDEE, and ideal weight 
+range. Input height, weight, age, gender, and activity level. Show results 
+with color-coded health ranges (underweight, normal, overweight, obese). 
+Include calorie recommendations for weight goals. Display results on 
+visual gauge. Educational design with clear explanations of each metric.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>22. Calorie Counter</strong>
+                <div class="code-block">
+Build a simple calorie tracker with food database (common foods with 
+calories). Add meals throughout the day. Set daily calorie goal and 
+show remaining calories. Display macros breakdown (protein, carbs, fats) 
+as pie chart. Include meal history and favorite foods quick-add. 
+Nutrition-focused design with food icons and progress indicators.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>23. Running Distance Tracker</strong>
+                <div class="code-block">
+Create a running log where I record distance, time, and pace per run. 
+Calculate average pace, total distance this week/month/year. Show 
+progress toward distance goals (e.g., 100 miles this year). Include 
+personal best times for common distances (5K, 10K, half marathon). 
+Display running stats with trophy icons. Energetic orange and blue theme.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>24. Meditation Timer</strong>
+                <div class="code-block">
+Build a meditation timer with preset durations (5, 10, 15, 20 minutes) 
+and custom time option. Include ambient background sounds toggle (nature, 
+rain, singing bowl). Show breathing guide animation (in/out cycle). 
+Track meditation streak and total time meditated. Start/end with gentle 
+chime. Calming design with soft gradients and zen aesthetics.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>25. Sleep Tracker</strong>
+                <div class="code-block">
+Create a sleep log recording bedtime and wake time. Calculate sleep 
+duration and show if it meets 7-9 hour recommendation. Track sleep 
+quality rating (1-5 stars). Display sleep patterns over 7/30 days with 
+bar chart. Calculate average sleep time. Include sleep debt calculator. 
+Nighttime theme with dark blues and moon/star icons.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>26. Mood Tracker & Journal</strong>
+                <div class="code-block">
+Build a mood tracking app with emoji selection (😁 😊 😐 😔 😢) for 
+daily mood. Add optional notes about the day. Show mood calendar view 
+with color coding. Calculate mood trends and patterns. Include trigger 
+tracking (sleep, exercise, weather). Generate mood insights report. 
+Empathetic design with soft, comforting colors and supportive messages.
+                </div>
+            </div>
+            
+            <h3>🎮 Games & Entertainment (7 Prompts)</h3>
+            
+            <div class="example">
+                <strong>27. Memory Card Matching Game</strong>
+                <div class="code-block">
+Create a memory matching game with cards face-down in a grid. Click to 
+flip two cards - if they match, they stay revealed. If not, they flip 
+back. Track moves taken and time elapsed. Include difficulty levels 
+(Easy: 8 cards, Medium: 16, Hard: 24). Show best scores. Add card flip 
+animations and success sounds. Colorful, playful design with card themes 
+(animals, fruits, emojis).
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>28. Trivia Quiz Game</strong>
+                <div class="code-block">
+Build a multiple-choice quiz game with 10 questions per category 
+(Science, History, Pop Culture, Sports). Show one question at a time 
+with 4 answer options. Track correct answers and show score at end. 
+Include timer per question (15 seconds). Display correct answer when 
+wrong. Add high score tracking. Game show themed design with bright 
+colors and countdown timer.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>29. Word Scramble Game</strong>
+                <div class="code-block">
+Create a word unscramble game showing scrambled letters. User types 
+their guess and submits. Show hints (word length, category). Include 
+skip button and reveal answer. Track score and streak. Add difficulty 
+levels with word length. Include word bank from different categories. 
+Educational design with letter tiles and score animations.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>30. Tic Tac Toe</strong>
+                <div class="code-block">
+Build a tic-tac-toe game for two players (X and O). Detect wins, draws, 
+and whose turn it is. Show game history and win statistics per player. 
+Include reset/new game button. Add win animation highlighting the winning 
+line. Optional: Add simple AI opponent for single player. Classic game 
+design with clean grid and clear X/O symbols.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>31. Random Decision Maker</strong>
+                <div class="code-block">
+Create a decision helper where I input multiple options (restaurants, 
+movies, activities). Add random picker that shows spinning animation 
+and selects one option. Include yes/no quick decision mode. Add dice 
+roller (1-6) and coin flipper. Save decision history. Fun, playful 
+design with animation effects and sound effects toggle.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>32. Bingo Card Generator</strong>
+                <div class="code-block">
+Build a bingo card creator generating random 5×5 cards with free space 
+in center. Allow custom text input for squares (for themed bingo). 
+Generate multiple cards at once. Include number calling mode for 
+traditional bingo (1-75). Mark squares when called. Detect and 
+celebrate bingo win. Printable card option. Colorful carnival theme.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>33. Would You Rather Generator</strong>
+                <div class="code-block">
+Create a "Would You Rather" game showing two difficult choices. Track 
+which option I pick and show statistics (X% chose option A). Include 
+question categories (funny, serious, impossible, food). Vote results 
+shown as bar comparison. Add question submission feature. Share-worthy 
+design with contrasting sides for each choice and engaging animations.
+                </div>
+            </div>
+            
+            <h3>🛠️ Utilities & Tools (8 Prompts)</h3>
+            
+            <div class="example">
+                <strong>34. Unit Converter</strong>
+                <div class="code-block">
+Build a comprehensive unit converter for Length (m, km, ft, miles), 
+Weight (kg, lb, oz), Temperature (C, F, K), Volume (L, gal, ml), and 
+Area (m², ft²). Select category, input value, choose from/to units, 
+see instant conversion. Include conversion formula display. Common 
+conversions quick access. Clean, tool-like design with clear inputs 
+and results.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>35. QR Code Generator</strong>
+                <div class="code-block">
+Create a QR code generator where I input text or URL and it generates 
+a scannable QR code. Include size options (small, medium, large). 
+Add color customization (foreground and background). Download QR as 
+image. Show QR code history. Include example use cases. Modern design 
+with QR code preview and download button.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>36. Color Palette Generator</strong>
+                <div class="code-block">
+Build a color tool showing 5 random harmonious colors. Display hex codes 
+and RGB values. Include copy-to-clipboard for each color. Generate new 
+palette button. Lock individual colors while randomizing others. Show 
+color names. Export palette as image. Include complementary, analogous, 
+and triadic scheme options. Designer-focused interface with large color 
+swatches.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>37. Text Case Converter</strong>
+                <div class="code-block">
+Create a text transformation tool with input textarea. Include buttons 
+for: UPPERCASE, lowercase, Title Case, Sentence case, tOGGLE cASE, 
+and camelCase. Show character count, word count, and sentence count. 
+Add remove extra spaces option. Copy output to clipboard button. 
+Simple, functional design focused on text processing.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>38. Countdown Timer</strong>
+                <div class="code-block">
+Build a countdown timer for specific events (vacation, birthday, deadline). 
+Set target date and time. Show remaining time in days, hours, minutes, 
+seconds with large display. Include multiple countdowns. Add progress 
+bar showing time elapsed vs. remaining. Celebration animation when 
+countdown reaches zero. Event-focused design with customizable countdown 
+themes.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>39. Age Calculator</strong>
+                <div class="code-block">
+Create an age calculator showing exact age from birthdate to today in 
+years, months, and days. Also show age in weeks, days, hours, minutes. 
+Calculate days until next birthday. Show zodiac sign and birthstone. 
+Include "age on date" feature to check age on any past/future date. 
+Birthday-themed design with cake and celebration elements.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>40. Lorem Ipsum Generator</strong>
+                <div class="code-block">
+Build a placeholder text generator creating Lorem Ipsum paragraphs, 
+sentences, or words. Include quantity selector (1-20 paragraphs). 
+Add options for different text types (classic lorem, hipster ipsum, 
+bacon ipsum). Show word and character count. One-click copy to clipboard. 
+Include HTML paragraph tag wrapper option. Developer-focused clean design.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>41. Markdown Preview Editor</strong>
+                <div class="code-block">
+Create a split-screen markdown editor with input on left and live 
+preview on right. Support headings, bold, italic, links, lists, code 
+blocks, and images. Include markdown syntax quick-reference. Copy 
+HTML output option. Download as .md file. Word count display. 
+Writer-friendly interface with syntax highlighting and clean preview.
+                </div>
+            </div>
+            
+            <h3>🎨 Creative & Learning (9 Prompts)</h3>
+            
+            <div class="example">
+                <strong>42. Drawing Prompt Generator</strong>
+                <div class="code-block">
+Build a creative prompt generator for artists combining random elements: 
+character (wizard, robot, cat), setting (forest, space station, beach), 
+mood (mysterious, joyful, eerie), and style (watercolor, pixel art, 
+sketch). Generate button creates new combination. Save favorite prompts. 
+Include difficulty levels. Artistic design with illustration examples 
+and inspiring colors.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>43. Flashcard Study App</strong>
+                <div class="code-block">
+Create a flashcard app where I create decks by topic. Add cards with 
+question on front, answer on back. Click to flip card. Track mastered 
+vs. learning cards. Include shuffle mode and study session statistics. 
+Show progress per deck. Add spaced repetition hints (review again in X 
+days). Educational design with card flip animations and progress tracking.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>44. Creative Writing Prompt Generator</strong>
+                <div class="code-block">
+Build a story starter generator with opening lines, character profiles, 
+plot twists, and setting descriptions. Categories: Romance, Sci-Fi, 
+Mystery, Fantasy, Horror. Combine multiple elements for complete story 
+premise. Include writing challenges (write 100 words, use 3 specific 
+words). Save inspiring prompts. Writer-focused design with typewriter 
+aesthetic and inspirational quotes.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>45. Multiplication Table Practice</strong>
+                <div class="code-block">
+Create a multiplication quiz for kids with selectable times tables 
+(1-12). Show random questions one at a time with multiple choice answers. 
+Track correct/incorrect and show encouraging feedback. Include timed 
+mode and practice mode. Display progress stars and achievement badges. 
+Award certificates for mastering tables. Kid-friendly colorful design 
+with fun characters and celebration animations.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>46. Chord Progression Generator</strong>
+                <div class="code-block">
+Build a music chord generator showing random chord progressions in 
+selected key (C, G, D, A, E, F major/minor). Display 4-chord progressions 
+commonly used in songs. Include chord diagrams for guitar. Show song 
+examples using each progression. Generate button for new progressions. 
+Save favorites. Music-themed design with staff notation visual elements.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>47. Vocabulary Builder</strong>
+                <div class="code-block">
+Create a word-of-the-day app with random vocabulary words, definitions, 
+example sentences, and synonyms. Include difficulty levels (beginner, 
+intermediate, advanced). Quiz mode testing definitions. Track learned 
+words. Add to personal word list. Include pronunciation guide. 
+Educational design with book/dictionary theme and achievement tracking.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>48. Recipe Scaler</strong>
+                <div class="code-block">
+Build a recipe scaling calculator where I input original recipe servings 
+and ingredients with quantities. Adjust serving size and all ingredients 
+scale proportionally. Support fractions (1/2 cup, 1/4 tsp). Convert 
+between units when possible. Include shopping list export. Save favorite 
+recipes. Kitchen-friendly design with clear measurements and cooking-themed 
+icons.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>49. Language Phrase Book</strong>
+                <div class="code-block">
+Create a travel phrase reference with common phrases in multiple languages 
+(greetings, directions, food, emergencies). Organize by category and 
+situation. Include pronunciation guides. Add favorites feature for 
+quick access. Search by English phrase. Offline-capable design. Travel-
+themed interface with flag icons and cultural colors.
+                </div>
+            </div>
+            
+            <div class="example">
+                <strong>50. Daily Affirmation Generator</strong>
+                <div class="code-block">
+Build a positive affirmation app showing daily motivational messages 
+and self-care reminders. Categories: confidence, success, health, 
+relationships, gratitude. Beautiful typography displaying one affirmation. 
+Save favorites. Share as image. Set daily notification reminder time. 
+Include reflection journal. Uplifting design with calming colors, 
+gentle animations, and nature imagery.
+                </div>
+            </div>
+            
+            <div class="success">
+                <strong>🎯 How to Use These Prompts:</strong>
+                <ol style="margin-top: 1%;">
+                    <li><strong>Copy the entire prompt</strong> - Don't paraphrase, use it as-is</li>
+                    <li><strong>Customize if needed</strong> - Change colors, features, or themes</li>
+                    <li><strong>Paste into Claude</strong> - Let it create the full app</li>
+                    <li><strong>Test thoroughly</strong> - Try all features before modifications</li>
+                    <li><strong>Iterate</strong> - Ask for improvements one at a time</li>
+                </ol>
+            </div>
+            
+            <div class="tip">
+                <strong>💡 Mix & Match:</strong> Combine features from different prompts! For example, take the habit tracker's streak counting and add it to the water intake tracker. Creative combinations make unique apps!
+            </div>
+        </section>
+        
+        <section id="debug">
+            <h2>🔧 Debugging Guide: How to Fix When Things Go Wrong</h2>
+            
+            <h3>Step 1: Identify the Problem</h3>
+            
+            <div class="step">
+                <h4>Ask Yourself These Questions:</h4>
+                <ol>
+                    <li><strong>What were you trying to do?</strong> "I clicked the save button"</li>
+                    <li><strong>What did you expect to happen?</strong> "The note should save"</li>
+                    <li><strong>What actually happened?</strong> "Nothing happened at all"</li>
+                    <li><strong>Can you reproduce it?</strong> "Yes, happens every time"</li>
+                </ol>
+            </div>
+            
+            <h3>Step 2: Common Problems & Solutions</h3>
+            
+            <div class="warning">
+                <h4>Problem: Button Doesn't Do Anything</h4>
+                <p><strong>Tell Claude:</strong></p>
+                <div class="code-block">
+"When I click the [BUTTON NAME] button, nothing happens. 
+I expected it to [WHAT IT SHOULD DO]. Can you check if 
+the button is connected properly?"
+                </div>
+            </div>
+            
+            <div class="warning">
+                <h4>Problem: App Looks Broken on Mobile</h4>
+                <p><strong>Tell Claude:</strong></p>
+                <div class="code-block">
+"The app looks fine on computer but broken on my phone. 
+The [SPECIFIC ISSUE like buttons overlap, text is tiny, 
+things run off screen]. Can you make it mobile-responsive?"
+                </div>
+            </div>
+            
+            <div class="warning">
+                <h4>Problem: Data Doesn't Save</h4>
+                <p><strong>Tell Claude:</strong></p>
+                <div class="code-block">
+"When I close the browser and come back, all my data is gone. 
+Can you add local storage so my [ITEMS] are saved permanently?"
+                </div>
+            </div>
+            
+            <div class="warning">
+                <h4>Problem: Colors Are Hard to Read</h4>
+                <p><strong>Tell Claude:</strong></p>
+                <div class="code-block">
+"The text is hard to read because the contrast isn't good. 
+Can you change the [TEXT COLOR] so it stands out better 
+against the [BACKGROUND COLOR]?"
+                </div>
+            </div>
+            
+            <div class="warning">
+                <h4>Problem: Feature Works Incorrectly</h4>
+                <p><strong>Tell Claude:</strong></p>
+                <div class="code-block">
+"The calculator gives wrong results. When I enter 5 + 3, 
+it shows 35 instead of 8. Can you fix the addition function?"
+                </div>
+            </div>
+            
+            <div class="warning">
+                <h4>Problem: Layout Is Messy</h4>
+                <p><strong>Tell Claude:</strong></p>
+                <div class="code-block">
+"The layout looks cluttered with everything squished together. 
+Can you add more spacing between elements and make it cleaner?"
+                </div>
+            </div>
+            
+            <h3>Step 3: Debugging Workflow</h3>
+            
+            <div class="step">
+                <h4>1. Test Methodically</h4>
+                <ul>
+                    <li>Test one feature at a time</li>
+                    <li>Try different inputs (numbers, text, special characters)</li>
+                    <li>Test on different devices if possible</li>
+                    <li>Try edge cases (empty input, very long text, zero, negative numbers)</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>2. Describe Precisely</h4>
+                <div class="template-box">
+The [SPECIFIC ELEMENT] doesn't [SPECIFIC ACTION] when I [WHAT YOU DO].
+<br>Steps to reproduce:
+<br>1. [STEP 1]
+<br>2. [STEP 2]
+<br>3. [WHAT HAPPENS]
+<br>
+<br>Expected: [WHAT SHOULD HAPPEN]
+<br>Actual: [WHAT ACTUALLY HAPPENS]
+                </div>
+            </div>
+            
+            <div class="step">
+                <h4>3. Let Claude Fix It</h4>
+                <p>Claude will usually:</p>
+                <ul>
+                    <li>Acknowledge the bug</li>
+                    <li>Explain what was wrong</li>
+                    <li>Show you the fixed version</li>
+                    <li>You can test again!</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>4. If Still Not Working</h4>
+                <p>Try saying:</p>
+                <div class="code-block">
+"That didn't fix it. Let me explain again with more detail: 
+[VERY DETAILED DESCRIPTION]. Can you try a different approach?"
+                </div>
+            </div>
+            
+            <h3>Prevention Tips</h3>
+            
+            <div class="tip">
+                <strong>✅ Test after every change</strong> - Don't add 5 features then test. Test after each one!
+            </div>
+            
+            <div class="tip">
+                <strong>✅ Save working versions</strong> - Download the app before making big changes!
+            </div>
+            
+            <div class="tip">
+                <strong>✅ Be specific in prompts</strong> - Clear instructions = fewer bugs!
+            </div>
+            
+            <div class="tip">
+                <strong>✅ Test edge cases</strong> - What happens if someone enters zero? Empty text? 100 items?
+            </div>
+        </section>
+        
+        <section id="faq">
+            <h2>❓ Frequently Asked Questions</h2>
+            
+            <h3>Getting Started Questions</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Do I need to pay to use Claude?</div>
+                <div class="faq-answer">A: No! Claude has a free tier that's perfect for learning and building personal apps. You can create unlimited apps, though there are message limits. Paid plans offer more messages and faster responses.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Do I need to know how to code?</div>
+                <div class="faq-answer">A: Absolutely not! That's the whole point. You describe what you want in plain English, and Claude writes all the code. You never need to see or understand the code if you don't want to.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: How long does it take to create an app?</div>
+                <div class="faq-answer">A: Simple apps: 1-5 minutes. Medium complexity: 10-20 minutes. Complex apps: 30-60 minutes. Most of the time is you describing what you want and testing, not Claude creating!</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Can I use my apps on my phone?</div>
+                <div class="faq-answer">A: Yes! Download the HTML file and open it in your phone's browser (Safari, Chrome, etc.). You can even add it to your home screen like a real app!</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Will my apps work offline?</div>
+                <div class="faq-answer">A: Yes! Once downloaded, the HTML file works completely offline. If you've asked Claude to save data locally, that works offline too!</div>
+            </div>
+            
+            <h3>App Creation Questions</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: What's an "artifact"?</div>
+                <div class="faq-answer">A: An artifact is the interactive preview box that shows your app. It's like a mini-browser where you can see and interact with what Claude creates. You can download artifacts as HTML files.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Can I edit the code myself?</div>
+                <div class="faq-answer">A: Yes! Download the HTML file and open it in any text editor. But it's usually easier to just tell Claude what changes you want!</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: How do I make my app remember data?</div>
+                <div class="faq-answer">A: Just ask! Say "Save all data using local storage so it persists between sessions." Claude will add this automatically.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Can Claude create apps that connect to databases?</div>
+                <div class="faq-answer">A: Not directly. Claude creates "client-side" apps that run in browsers. For database-connected apps, you'd need to set up your own server (more advanced). But local storage works great for personal apps!</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: What if I want to add a feature later?</div>
+                <div class="faq-answer">A: Easy! Just continue in the same chat and say "Add a feature that does [X]." Claude will update your app while keeping everything else intact.</div>
+            </div>
+            
+            <h3>Technical Questions</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: What's the difference between HTML and React artifacts?</div>
+                <div class="faq-answer">A: HTML artifacts are simpler, single-file apps. React artifacts are more powerful for complex interactive features. As a beginner, HTML is usually fine! Let Claude choose unless you have a preference.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Can I share my apps with friends?</div>
+                <div class="faq-answer">A: Yes! Just send them the HTML file or host it on a website. They can open it in any browser. The app works exactly the same for them.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: How do I host my app online?</div>
+                <div class="faq-answer">A: You can use free services like GitHub Pages, Netlify, or Vercel. Upload your HTML file and they'll give you a URL to share. Claude can guide you through this if you ask!</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Can I use Claude to update an existing website I already have?</div>
+                <div class="faq-answer">A: Sort of. Claude can create new components or features, and you can copy the code into your existing website. But Claude can't directly access or edit your live website.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: What browsers work with Claude apps?</div>
+                <div class="faq-answer">A: All modern browsers! Chrome, Safari, Firefox, Edge, and mobile browsers all work perfectly.</div>
+            </div>
+            
+            <h3>Troubleshooting Questions</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: The app looks different than what I asked for. What do I do?</div>
+                <div class="faq-answer">A: Tell Claude specifically what's different! "I asked for blue but it's green" or "I wanted the button at the top but it's at the bottom." Claude will adjust it.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Claude says it can't do something. Is that true?</div>
+                <div class="faq-answer">A: Usually yes, but sometimes it's about how you asked. Try rephrasing: instead of "connect to a database," say "save data locally." Instead of "make it an iPhone app," say "make it work great on mobile browsers."</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: My app broke after I asked Claude to change something!</div>
+                <div class="faq-answer">A: Say "That change broke the app. Can you revert to how it was before?" Claude can go back! This is why you should download working versions frequently.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Can I start a new chat and continue working on my app?</div>
+                <div class="faq-answer">A: No, Claude won't remember the app from a different chat. Always continue in the same chat thread for one project!</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: The app works in the artifact but not when I download it. Why?</div>
+                <div class="faq-answer">A: This is rare. Tell Claude: "The downloaded file doesn't work the same as the artifact preview. Can you check if anything needs to be fixed for standalone use?"</div>
+            </div>
+            
+            <h3>Advanced Questions</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Can I make money with apps Claude creates?</div>
+                <div class="faq-answer">A: Yes! You own what you create. You can sell apps, use them for clients, or monetize them however you want. Check Anthropic's terms of service for specifics.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Can Claude create apps that use AI features?</div>
+                <div class="faq-answer">A: Yes! Claude can create apps that call the Anthropic API, which means your app can have AI-powered features. This is more advanced but totally possible!</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: What's the most complex app I can create with Claude?</div>
+                <div class="faq-answer">A: Claude can create quite sophisticated single-page applications with multiple features, data visualization, complex calculations, and interactive elements. The limit is mainly browser-based apps vs. apps needing servers/databases.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: How do I learn to eventually code myself?</div>
+                <div class="faq-answer">A: Ask Claude to explain the code it writes! Say "Can you explain how this works in simple terms?" Claude is an excellent teacher. You'll naturally pick things up as you build.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Can Claude help me debug code I wrote myself?</div>
+                <div class="faq-answer">A: Absolutely! Share your code and explain the problem. Claude can spot bugs, suggest improvements, and explain what's wrong.</div>
+            </div>
+            
+            <h3>Best Practices Questions</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Should I create one big app or several small ones?</div>
+                <div class="faq-answer">A: Start with small, focused apps! It's easier to build and maintain. You can always combine features later if needed.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: How often should I download/save my apps?</div>
+                <div class="faq-answer">A: After every major feature addition or whenever you're happy with how it works. Think of it like saving a document - do it often!</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: What should I build first as a beginner?</div>
+                <div class="faq-answer">A: Start with something you'll actually use! A todo list, expense tracker, or simple calculator. Personal need = motivation to finish!</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: How do I organize multiple app projects?</div>
+                <div class="faq-answer">A: Create a folder on your computer called "Claude Apps" and save each project with descriptive names like "budget-tracker-v3.html" or "recipe-finder-blue-theme.html"</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Is it okay to copy prompts from examples?</div>
+                <div class="faq-answer">A: Absolutely! That's what they're for. Copy, modify, and make them your own. Everyone starts by learning from examples.</div>
+            </div>
+        </section>
+        
+        <section id="next-steps">
+            <h2>🚀 Your Learning Path: Next Steps</h2>
+            
+            <h3>Week 1: Build the Basics</h3>
+            <div class="step">
+                <strong>Day 1-2:</strong> Complete the "Your First 5 Minutes" and create the button counter<br>
+                <strong>Day 3-4:</strong> Follow the complete todo list walkthrough<br>
+                <strong>Day 5-6:</strong> Create a calculator using the prompt templates<br>
+                <strong>Day 7:</strong> Build something YOU need - a real tool for your life
+            </div>
+            
+            <h3>Week 2: Add Complexity</h3>
+            <div class="step">
+                <strong>Day 8-9:</strong> Build a tracker app (habits, expenses, workouts)<br>
+                <strong>Day 10-11:</strong> Create an app with charts/visualization<br>
+                <strong>Day 12-13:</strong> Make a game (quiz, memory match, word game)<br>
+                <strong>Day 14:</strong> Improve your favorite app from Week 1
+            </div>
+            
+            <h3>Week 3: Polish & Share</h3>
+            <div class="step">
+                <strong>Day 15-16:</strong> Focus on mobile-responsive design<br>
+                <strong>Day 17-18:</strong> Add data persistence to all your apps<br>
+                <strong>Day 19-20:</strong> Create a portfolio app showcasing your projects<br>
+                <strong>Day 21:</strong> Share one app with a friend and get feedback
+            </div>
+            
+            <h3>Week 4: Advanced Features</h3>
+            <div class="step">
+                <strong>Day 22-23:</strong> Learn about Claude API integration<br>
+                <strong>Day 24-25:</strong> Create a multi-feature dashboard<br>
+                <strong>Day 26-27:</strong> Build something ambitious (10+ features)<br>
+                <strong>Day 28:</strong> Review all 25 common mistakes - did you avoid them?
+            </div>
+            
+            <div class="success">
+                <strong>🎓 After 4 Weeks:</strong> You'll be comfortable creating professional-looking apps for any personal need! You'll understand prompt engineering, iterative development, and have a portfolio of working apps!
+            </div>
+            
+            <h3>Project Ideas by Category</h3>
+            
+            <h4>Productivity</h4>
+            <ul>
+                <li>Pomodoro timer with break reminders</li>
+                <li>Daily goal tracker with streak counter</li>
+                <li>Meeting notes organizer</li>
+                <li>Quick decision maker (pros/cons list)</li>
+            </ul>
+            
+            <h4>Finance</h4>
+            <ul>
+                <li>Budget tracker with categories</li>
+                <li>Tip calculator with split bill feature</li>
+                <li>Savings goal visualizer</li>
+                <li>Invoice generator for freelancers</li>
+            </ul>
+            
+            <h4>Health & Fitness</h4>
+            <ul>
+                <li>Water intake tracker</li>
+                <li>Meal planner with shopping list</li>
+                <li>Workout logger with progress charts</li>
+                <li>Mood journal with insights</li>
+            </ul>
+            
+            <h4>Learning</h4>
+            <ul>
+                <li>Flashcard quiz app</li>
+                <li>Study timer with session tracking</li>
+                <li>Vocabulary builder</li>
+                <li>Practice test creator</li>
+            </ul>
+            
+            <h4>Creative</h4>
+            <ul>
+                <li>Writing prompt generator</li>
+                <li>Color palette creator</li>
+                <li>Idea journal with tags</li>
+                <li>Random story starter</li>
+            </ul>
+            
+            <h4>Fun</h4>
+            <ul>
+                <li>Would you rather game</li>
+                <li>Dice roller for board games</li>
+                <li>Random restaurant picker</li>
+                <li>Bingo card generator</li>
+            </ul>
+        </section>
+        
+        <section id="artifacts-deep-dive">
+            <h2>🎯 Understanding Artifacts: Deep Dive</h2>
+            <p style="color: #a8dadc;">Everything you need to know about how artifacts work and how to use them effectively</p>
+            
+            <h3>What Exactly Is an Artifact?</h3>
+            
+            <div class="step">
+                <h4>Definition</h4>
+                <p>An artifact is a self-contained, interactive preview of code that Claude creates. Think of it as a mini-website or app that appears right in your conversation, letting you see and interact with what Claude built without leaving the chat.</p>
+            </div>
+            
+            <div class="example">
+                <strong>Analogy:</strong> If Claude is a chef, the artifact is the dish served on a plate. You can see it, taste it (interact with it), and decide if it needs more seasoning (modifications) - all without going into the kitchen (the code).
+            </div>
+            
+            <h3>Types of Artifacts Claude Can Create</h3>
+            
+            <div class="step">
+                <h4>1. HTML Artifacts (.html)</h4>
+                <p><strong>What:</strong> Complete web apps with HTML, CSS, and JavaScript all in one file</p>
+                <p><strong>Best for:</strong> Simple to medium complexity apps, calculators, forms, dashboards</p>
+                <p><strong>Pros:</strong> Works everywhere, easy to download and share, no dependencies</p>
+                <p><strong>Cons:</strong> Can get messy with very complex apps</p>
+                <div class="code-block">
+Example: Todo list, budget tracker, timer, calculator
+                </div>
+            </div>
+            
+            <div class="step">
+                <h4>2. React Artifacts (.jsx)</h4>
+                <p><strong>What:</strong> Interactive components using React framework with modern features</p>
+                <p><strong>Best for:</strong> Complex interactive apps, data visualization, real-time updates</p>
+                <p><strong>Pros:</strong> More powerful, better for complex state management, modern</p>
+                <p><strong>Cons:</strong> Slightly more technical (but Claude handles it!)</p>
+                <div class="code-block">
+Example: Data dashboards, games with complex state, interactive charts
+                </div>
+            </div>
+            
+            <div class="step">
+                <h4>3. Markdown Artifacts (.md)</h4>
+                <p><strong>What:</strong> Formatted text documents with headings, lists, links, images</p>
+                <p><strong>Best for:</strong> Documentation, guides, articles, reports, notes</p>
+                <p><strong>Pros:</strong> Clean, readable, easy to convert to other formats</p>
+                <p><strong>Cons:</strong> Not interactive, just for reading</p>
+                <div class="code-block">
+Example: This guide you're reading, user manuals, blog posts
+                </div>
+            </div>
+            
+            <div class="step">
+                <h4>4. SVG Artifacts (.svg)</h4>
+                <p><strong>What:</strong> Scalable vector graphics - images made of mathematical shapes</p>
+                <p><strong>Best for:</strong> Logos, icons, diagrams, illustrations, infographics</p>
+                <p><strong>Pros:</strong> Scales to any size without losing quality, editable</p>
+                <p><strong>Cons:</strong> Better for simple graphics than photos</p>
+                <div class="code-block">
+Example: Company logo, flowchart, organizational chart, custom icons
+                </div>
+            </div>
+            
+            <div class="step">
+                <h4>5. Mermaid Diagrams (.mermaid)</h4>
+                <p><strong>What:</strong> Code that generates flowcharts, sequence diagrams, timelines</p>
+                <p><strong>Best for:</strong> Process flows, org charts, system architectures, timelines</p>
+                <p><strong>Pros:</strong> Easy to create complex diagrams with text</p>
+                <p><strong>Cons:</strong> Limited styling options</p>
+                <div class="code-block">
+Example: Project timeline, decision tree, workflow diagram
+                </div>
+            </div>
+            
+            <h3>How Artifacts Work Behind the Scenes</h3>
+            
+            <div class="warning">
+                <h4>Important Concept: Artifacts Are Sandboxed</h4>
+                <p>Artifacts run in an isolated environment (sandbox) which means:</p>
+                <ul>
+                    <li>✅ They can't access your files or personal data (security!)</li>
+                    <li>✅ They can't make network requests to random websites</li>
+                    <li>✅ They work the same for everyone</li>
+                    <li>❌ They can't automatically fetch live data from the internet</li>
+                    <li>❌ They can't save to your computer without you downloading</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>Storage & Persistence</h4>
+                <p><strong>Local Storage:</strong> When Claude adds "local storage" to your app, data is saved in your browser. This means:</p>
+                <ul>
+                    <li>Data persists when you close/reopen the artifact in the SAME browser</li>
+                    <li>Data is specific to YOUR browser (others can't see it)</li>
+                    <li>Data stays even if you download the HTML file and open it elsewhere</li>
+                    <li>Clearing browser data will erase it</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>New Feature: window.storage (2026)</h4>
+                <p>Claude now supports <span class="highlight">window.storage</span> which is even more powerful:</p>
+                <ul>
+                    <li>Data persists across sessions in Claude.ai</li>
+                    <li>Can be shared between users if specified</li>
+                    <li>Survives browser refreshes</li>
+                    <li>Perfect for collaborative apps or shared data</li>
+                </ul>
+                <div class="code-block">
+Ask Claude: "Use window.storage to save data that persists 
+across sessions and can be shared with others"
+                </div>
+            </div>
+            
+            <h3>Artifact Lifecycle</h3>
+            
+            <div class="step">
+                <h4>Stage 1: Creation</h4>
+                <p>You describe what you want → Claude generates code → Artifact appears in preview</p>
+                <div class="screenshot-placeholder">
+                    💬 "Create a calculator" → ⚙️ Claude writes code → 📱 Calculator appears
+                </div>
+            </div>
+            
+            <div class="step">
+                <h4>Stage 2: Interaction</h4>
+                <p>You use the artifact, test features, find what you like and what needs improvement</p>
+                <div class="screenshot-placeholder">
+                    👆 Click buttons, type input, test all features in the preview
+                </div>
+            </div>
+            
+            <div class="step">
+                <h4>Stage 3: Iteration</h4>
+                <p>You request changes → Claude updates the code → Artifact refreshes with changes</p>
+                <div class="screenshot-placeholder">
+                    💬 "Make the buttons bigger" → ⚙️ Claude updates → 📱 Buttons are now bigger
+                </div>
+            </div>
+            
+            <div class="step">
+                <h4>Stage 4: Download/Share</h4>
+                <p>When satisfied, download the file to use outside Claude or share with others</p>
+                <div class="screenshot-placeholder">
+                    💾 Click download icon → Save to computer → Open anywhere!
+                </div>
+            </div>
+            
+            <h3>Common Artifact Questions</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I have multiple artifacts in one conversation?</div>
+                <div class="faq-answer">Yes! Claude can create multiple artifacts. Each appears as a separate preview. You can ask Claude to "create a new artifact" or "update the previous calculator artifact."</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can artifacts talk to each other?</div>
+                <div class="faq-answer">Not directly. Each artifact is independent. However, you can ask Claude to combine features from multiple artifacts into one new artifact.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do artifacts expire or disappear?</div>
+                <div class="faq-answer">Artifacts stay in the conversation thread. However, once you leave Claude.ai, you need the downloaded file to access them again. Always download important artifacts!</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I edit artifact code directly?</div>
+                <div class="faq-answer">In Claude.ai, you can't edit the code directly - you ask Claude to make changes. However, once downloaded, you can edit the HTML/code in any text editor!</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Why does my artifact look different when downloaded?</div>
+                <div class="faq-answer">Rarely, this happens if the artifact relies on Claude-specific features. If this occurs, tell Claude: "The downloaded version doesn't match the preview - please make it work standalone."</div>
+            </div>
+            
+            <h3>Advanced Artifact Features</h3>
+            
+            <div class="tip">
+                <h4>Using Claude API Inside Artifacts</h4>
+                <p>You can create artifacts that call Claude's AI! This means your app can have AI-powered features:</p>
+                <div class="code-block">
+Example: "Create a recipe idea generator that uses Claude API 
+to suggest recipes based on ingredients I have"
+                </div>
+                <p>Claude will include API calls in your artifact automatically!</p>
+            </div>
+            
+            <div class="tip">
+                <h4>Using Libraries in Artifacts</h4>
+                <p>Artifacts support popular libraries like:</p>
+                <ul>
+                    <li><strong>Charts:</strong> Recharts, Chart.js for data visualization</li>
+                    <li><strong>Icons:</strong> Lucide-react for beautiful icons</li>
+                    <li><strong>Utilities:</strong> Lodash, MathJS for complex operations</li>
+                    <li><strong>UI Components:</strong> shadcn/ui for professional components</li>
+                </ul>
+                <div class="code-block">
+Just ask: "Create a chart using Recharts showing my data"
+Claude knows how to use these libraries!
+                </div>
+            </div>
+            
+            <h3>Artifact Best Practices</h3>
+            
+            <div class="success">
+                <strong>✅ DO:</strong>
+                <ul>
+                    <li>Test artifacts thoroughly before downloading</li>
+                    <li>Download versions you like before making big changes</li>
+                    <li>Use descriptive names when saving (todo-list-v2.html)</li>
+                    <li>Ask Claude to add comments explaining complex code</li>
+                    <li>Request mobile-responsive design if using on phones</li>
+                    <li>Save artifacts with data persistence features</li>
+                </ul>
+            </div>
+            
+            <div class="warning">
+                <strong>❌ DON'T:</strong>
+                <ul>
+                    <li>Assume artifacts will save automatically - download them!</li>
+                    <li>Expect artifacts to work offline if they fetch external data</li>
+                    <li>Put sensitive passwords or API keys in artifacts (security risk)</li>
+                    <li>Create one giant artifact with 20 features - break it up!</li>
+                    <li>Forget to test on actual mobile devices if making mobile apps</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="mobile-best-practices">
+            <h2>📱 Mobile App Best Practices</h2>
+            <p style="color: #a8dadc;">Essential guidelines for creating apps that work beautifully on phones and tablets</p>
+            
+            <h3>Why Mobile-First Matters</h3>
+            
+            <div class="tip">
+                <p><strong>Statistics:</strong> Over 60% of web traffic is from mobile devices. If your app doesn't work well on phones, most people won't use it!</p>
+            </div>
+            
+            <div class="example">
+                <strong>Mobile-First Approach:</strong> Design for small screens first, then enhance for larger screens. This ensures your app works everywhere!
+            </div>
+            
+            <h3>1. Touch Target Sizes</h3>
+            
+            <div class="step">
+                <h4>The 44px Rule</h4>
+                <p>Buttons and interactive elements should be at least 44×44 pixels - the size of an average fingertip.</p>
+                
+                <div class="comparison">
+                    <div class="bad-example">
+                        <strong>❌ Too Small:</strong><br>
+                        Tiny 20px buttons that are impossible to tap accurately
+                    </div>
+                    <div class="good-example">
+                        <strong>✅ Just Right:</strong><br>
+                        Large 50px+ buttons with comfortable spacing
+                    </div>
+                </div>
+                
+                <div class="template-box">
+                    <strong>Ask Claude:</strong><br>
+                    "Make all buttons at least 50px tall and wide enough for easy tapping on mobile phones"
+                </div>
+            </div>
+            
+            <div class="step">
+                <h4>Spacing Between Elements</h4>
+                <p>Add generous spacing between tappable elements to prevent accidental taps.</p>
+                <div class="code-block">
+Minimum 8px spacing between buttons
+Better: 16-24px spacing for comfort
+                </div>
+            </div>
+            
+            <h3>2. Readable Text</h3>
+            
+            <div class="step">
+                <h4>Font Size Guidelines</h4>
+                <ul>
+                    <li><strong>Body text:</strong> Minimum 16px (18-20px is better)</li>
+                    <li><strong>Buttons:</strong> 16-18px</li>
+                    <li><strong>Headings:</strong> 24px+ for h2, 20px+ for h3</li>
+                    <li><strong>Small text/captions:</strong> Never below 14px</li>
+                </ul>
+                
+                <div class="template-box">
+                    <strong>Ask Claude:</strong><br>
+                    "Use 18px for body text, 24px for headings, and make sure all text is easy to read on mobile"
+                </div>
+            </div>
+            
+            <div class="step">
+                <h4>Line Height & Spacing</h4>
+                <p>Cramped text is hard to read on small screens. Use comfortable line spacing.</p>
+                <div class="code-block">
+Line height: 1.5 to 1.8 for body text
+Letter spacing: Slightly increase for readability
+                </div>
+            </div>
+            
+            <h3>3. Color Contrast</h3>
+            
+            <div class="warning">
+                <h4>The Outdoor Screen Test</h4>
+                <p>Mobile phones are often used outside in bright sunlight. Low contrast text becomes invisible!</p>
+            </div>
+            
+            <div class="step">
+                <h4>High Contrast Combinations</h4>
+                <div class="example">
+                    <strong>✅ Good Contrast:</strong>
+                    <ul>
+                        <li>Black text on white background</li>
+                        <li>White text on dark blue/navy background</li>
+                        <li>Dark gray (#333) on light backgrounds</li>
+                        <li>Yellow/white text on dark backgrounds</li>
+                    </ul>
+                </div>
+                
+                <div class="example">
+                    <strong>❌ Poor Contrast (Avoid):</strong>
+                    <ul>
+                        <li>Light gray text on white background</li>
+                        <li>Yellow text on white background</li>
+                        <li>Any pastel on pastel combinations</li>
+                        <li>Similar shades of the same color</li>
+                    </ul>
+                </div>
+                
+                <div class="template-box">
+                    <strong>Ask Claude:</strong><br>
+                    "Use high contrast colors - dark text on light backgrounds or light text on dark backgrounds for easy reading in any lighting"
+                </div>
+            </div>
+            
+            <h3>4. Layout & Screen Real Estate</h3>
+            
+            <div class="step">
+                <h4>Vertical Scrolling Is Natural</h4>
+                <p>Mobile users are comfortable scrolling vertically. Don't try to cram everything "above the fold."</p>
+                
+                <div class="success">
+                    <strong>✅ Single Column Layout:</strong> Stack elements vertically for easy scrolling
+                </div>
+                
+                <div class="warning">
+                    <strong>❌ Horizontal Scrolling:</strong> Avoid forcing users to scroll sideways - it's awkward on mobile
+                </div>
+            </div>
+            
+            <div class="step">
+                <h4>Thumb-Friendly Navigation</h4>
+                <p>Most people hold phones with one hand and use their thumb. Place important actions within easy reach.</p>
+                
+                <div class="screenshot-placeholder">
+                    📱 Bottom navigation = Easy thumb access<br>
+                    📱 Top navigation = Requires hand repositioning
+                </div>
+                
+                <div class="template-box">
+                    <strong>Ask Claude:</strong><br>
+                    "Put the main action buttons at the bottom of the screen where they're easy to reach with a thumb"
+                </div>
+            </div>
+            
+            <div class="step">
+                <h4>Avoid Tiny Dropdowns</h4>
+                <p>Traditional dropdown menus are difficult on mobile. Use better alternatives:</p>
+                <ul>
+                    <li><strong>Radio buttons</strong> for 2-5 options</li>
+                    <li><strong>Segmented controls</strong> for 2-3 options</li>
+                    <li><strong>Large tap areas</strong> if dropdown is necessary</li>
+                </ul>
+            </div>
+            
+            <h3>5. Input & Forms</h3>
+            
+            <div class="step">
+                <h4>Mobile-Friendly Input Fields</h4>
+                <ul>
+                    <li><strong>Large input boxes:</strong> Minimum 44px height</li>
+                    <li><strong>Clear labels:</strong> Above or inside input, never too small</li>
+                    <li><strong>Appropriate keyboards:</strong> Numeric for numbers, email for email</li>
+                    <li><strong>Auto-capitalization:</strong> Use appropriately (names yes, passwords no)</li>
+                </ul>
+                
+                <div class="template-box">
+                    <strong>Ask Claude:</strong><br>
+                    "Make input fields large and easy to tap. Use the numeric keyboard for number inputs and email keyboard for email addresses."
+                </div>
+            </div>
+            
+            <div class="step">
+                <h4>Minimize Typing</h4>
+                <p>Typing on mobile is slower than on desktop. Reduce it wherever possible:</p>
+                <ul>
+                    <li>Use preset buttons instead of text input when possible</li>
+                    <li>Provide suggestions or autocomplete</li>
+                    <li>Remember previous inputs</li>
+                    <li>Use sliders for numeric ranges</li>
+                </ul>
+            </div>
+            
+            <h3>6. Performance & Loading</h3>
+            
+            <div class="step">
+                <h4>Fast Loading</h4>
+                <p>Mobile connections can be slower. Keep apps lightweight:</p>
+                <ul>
+                    <li>Avoid large images (compress them or use SVG)</li>
+                    <li>Don't load unnecessary external resources</li>
+                    <li>Show loading indicators for any delays > 1 second</li>
+                    <li>Progressive loading: Show content as it becomes available</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>Smooth Animations</h4>
+                <p>Animations should enhance, not slow down the experience:</p>
+                <div class="code-block">
+✅ Quick transitions (200-300ms)
+✅ Simple animations (fade, slide)
+❌ Heavy 3D effects
+❌ Slow animations (>500ms)
+                </div>
+            </div>
+            
+            <h3>7. Gestures & Interactions</h3>
+            
+            <div class="step">
+                <h4>Common Mobile Gestures</h4>
+                <ul>
+                    <li><strong>Tap:</strong> Primary action (like clicking)</li>
+                    <li><strong>Swipe:</strong> Navigate between screens or delete items</li>
+                    <li><strong>Pinch:</strong> Zoom in/out (if applicable)</li>
+                    <li><strong>Pull-to-refresh:</strong> Update content (advanced)</li>
+                </ul>
+                
+                <div class="template-box">
+                    <strong>Ask Claude:</strong><br>
+                    "Add swipe-to-delete functionality on list items for a mobile-friendly experience"
+                </div>
+            </div>
+            
+            <div class="warning">
+                <h4>Don't Rely on Hover</h4>
+                <p>Mobile devices don't have "hover" states. Never hide critical functionality behind hover-only interactions!</p>
+                <div class="comparison">
+                    <div class="bad-example">
+                        ❌ Delete button only appears on hover
+                    </div>
+                    <div class="good-example">
+                        ✅ Delete button always visible or appears on tap/swipe
+                    </div>
+                </div>
+            </div>
+            
+            <h3>8. Orientation Handling</h3>
+            
+            <div class="step">
+                <h4>Portrait vs. Landscape</h4>
+                <p>Most people use phones in portrait, but should work in landscape too:</p>
+                <div class="template-box">
+                    <strong>Ask Claude:</strong><br>
+                    "Make sure the app works in both portrait and landscape orientations on mobile"
+                </div>
+            </div>
+            
+            <h3>9. Testing on Real Devices</h3>
+            
+            <div class="warning">
+                <h4>Desktop Preview ≠ Real Mobile Experience</h4>
+                <p>Always test on an actual phone! Things that look fine on desktop may have issues on real devices.</p>
+            </div>
+            
+            <div class="step">
+                <h4>How to Test on Your Phone</h4>
+                <ol>
+                    <li>Download the HTML file from Claude</li>
+                    <li>Send it to your phone (email, cloud storage, AirDrop)</li>
+                    <li>Open in mobile browser (Safari, Chrome)</li>
+                    <li>Test ALL features with your actual fingers!</li>
+                    <li>Try in different lighting conditions</li>
+                    <li>Test with one-handed use</li>
+                </ol>
+            </div>
+            
+            <h3>10. Mobile-Specific Features</h3>
+            
+            <div class="step">
+                <h4>Add to Home Screen</h4>
+                <p>Users can add your web app to their phone's home screen like a native app!</p>
+                <div class="template-box">
+                    <strong>Ask Claude:</strong><br>
+                    "Add meta tags so this app can be installed on the home screen and works as a standalone app"
+                </div>
+            </div>
+            
+            <div class="step">
+                <h4>Offline Functionality</h4>
+                <p>Once downloaded, HTML apps work offline automatically. Data saved to local storage persists!</p>
+            </div>
+            
+            <h3>Complete Mobile Checklist</h3>
+            
+            <div class="success">
+                <strong>Before launching your mobile app, verify:</strong>
+                <ul>
+                    <li>☑️ All buttons are 44px+ and easy to tap</li>
+                    <li>☑️ Text is 16px+ and readable in sunlight</li>
+                    <li>☑️ High contrast colors throughout</li>
+                    <li>☑️ Single column layout (no horizontal scroll)</li>
+                    <li>☑️ Main actions at bottom (thumb-friendly)</li>
+                    <li>☑️ Large, clear input fields</li>
+                    <li>☑️ Fast loading (< 3 seconds)</li>
+                    <li>☑️ Works in portrait AND landscape</li>
+                    <li>☑️ No hover-only functionality</li>
+                    <li>☑️ Tested on real mobile device</li>
+                    <li>☑️ Spacing between tappable elements</li>
+                    <li>☑️ Appropriate keyboard types for inputs</li>
+                </ul>
+            </div>
+            
+            <h3>Mobile-First Prompt Template</h3>
+            
+            <div class="template-box">
+                <strong>Use this template for perfect mobile apps:</strong><br><br>
+                
+                Create a [APP TYPE] with these mobile-optimized features:<br>
+                - Large buttons (50px+) with 16px spacing<br>
+                - 18px body text, 24px headings<br>
+                - High contrast colors (specify colors)<br>
+                - Single column vertical layout<br>
+                - Main action buttons at bottom for thumb access<br>
+                - Large input fields with appropriate keyboards<br>
+                - Works perfectly in portrait and landscape<br>
+                - Fast loading with smooth 300ms animations<br>
+                - Save to home screen capability<br>
+                - Test on iPhone and Android screen sizes<br>
+                <br>
+                Features: [LIST YOUR FEATURES]
+            </div>
+            
+            <div class="example">
+                <strong>Example Using Template:</strong>
+                <div class="code-block">
+Create a grocery shopping list with these mobile-optimized features:
+- Large buttons (50px+) with 16px spacing
+- 18px body text, 24px headings
+- High contrast colors (dark blue #1a365d and white)
+- Single column vertical layout
+- Main action buttons at bottom for thumb access
+- Large input fields with text keyboard
+- Works perfectly in portrait and landscape
+- Fast loading with smooth 300ms animations
+- Save to home screen capability
+- Test on iPhone and Android screen sizes
+
+Features: Add items, check off purchased items, delete items, 
+categorize by aisle, save list persistently
+                </div>
+            </div>
+        </section>
+        
+        <section id="resources">
+            <h2>📚 Additional Resources</h2>
+            
+            <div class="tip">
+                <strong>Official Documentation:</strong><br>
+                Visit <strong>docs.anthropic.com</strong> for API documentation and advanced features
+            </div>
+            
+            <div class="tip">
+                <strong>Support:</strong><br>
+                For product questions: <strong>support.anthropic.com</strong>
+            </div>
+            
+            <div class="tip">
+                <strong>Ask Claude:</strong><br>
+                Remember, Claude itself is your best resource! Ask things like:
+                <ul style="margin-top: 1%;">
+                    <li>"Explain how local storage works in simple terms"</li>
+                    <li>"Show me 5 different ways to style buttons"</li>
+                    <li>"What are best practices for mobile app design?"</li>
+                    <li>"Help me debug this feature"</li>
+                </ul>
+            </div>
+            
+            <div class="success">
+                <strong>🌟 Final Tips:</strong>
+                <ul>
+                    <li><strong>Start building today</strong> - Don't wait to learn more first!</li>
+                    <li><strong>Build what you'll use</strong> - Personal needs = better learning</li>
+                    <li><strong>Iterate constantly</strong> - Every app can be improved</li>
+                    <li><strong>Save everything</strong> - You'll want to reference old projects</li>
+                    <li><strong>Have fun</strong> - This should be enjoyable, not stressful!</li>
+                    <li><strong>Share your work</strong> - Get feedback from real users</li>
+                    <li><strong>Keep this guide handy</strong> - Reference the templates and examples</li>
+                </ul>
+            </div>
+        </section>
+        
+        <footer style="text-align: center; margin-top: 5%; padding-top: 3%; border-top: 1px solid #6dd5ed; color: #a8dadc;">
+            <p style="font-size: 1.1rem; color: #ff9a56; font-weight: 600; margin-bottom: 2%;">You're Ready to Build! 🚀</p>
+            <p style="margin-bottom: 1%;">Every expert was once a beginner. Your journey starts with one simple prompt.</p>
+            <p style="margin-bottom: 1%;">Open Claude right now and try the button counter from "Your First 5 Minutes"</p>
+            <p style="font-size: 0.85rem; margin-top: 3%; color: #6dd5ed;">2026 Clawdbot Complete Beginner's Guide | Powered by Claude Sonnet 4</p>
+            <p style="font-size: 0.8rem; margin-top: 1%; color: #a8dadc;">Last Updated: February 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
